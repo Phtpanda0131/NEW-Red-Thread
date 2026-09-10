@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# Minimal POSIX gradlew wrapper script
+set -e
+DIR=$(cd "$(dirname "$0")" && pwd)
+if command -v gradle >/dev/null 2>&1; then
+    exec gradle "$@"
+elif [ -f "$DIR/gradle/wrapper/gradle-wrapper.jar" ]; then
+    exec java -jar "$DIR/gradle/wrapper/gradle-wrapper.jar" "$@"
+else
+    echo "Gradle not found. Please install Gradle 8.6+ or run with setup-gradle action."
+    exit 1
+fi

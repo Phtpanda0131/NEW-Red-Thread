@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Red Threads</string>
+    <string name="widget_description">Real-time signal widget connecting two people across distance</string>
+</resources>
