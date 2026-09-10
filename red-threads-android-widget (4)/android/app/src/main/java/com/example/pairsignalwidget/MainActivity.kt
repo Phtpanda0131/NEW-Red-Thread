@@ -136,7 +136,7 @@ class MainActivity : ComponentActivity() {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                             val appWidgetManager = getSystemService(AppWidgetManager::class.java)
                             val myProvider = ComponentName(this@MainActivity, PairWidgetReceiver::class.java)
-                            if (appWidgetManager.isRequestPinAppWidgetSupported) {
+                            if (appWidgetManager?.isRequestPinAppWidgetSupported == true) {
                                 appWidgetManager.requestPinAppWidget(myProvider, null, null)
                             }
                         }
